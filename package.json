@@ -30,7 +30,6 @@
     "package:watch": "npm run package -- --watch"
   },
   "license": "MIT",
-  "funding": "https://github.com/sponsors/toshimaru",
   "dependencies": {
     "@actions/core": "^3.0.1",
     "@actions/github": "9.1.1",
