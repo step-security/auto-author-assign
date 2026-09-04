@@ -86,7 +86,7 @@ jobs:
   assign-author:
     runs-on: ubuntu-slim
     steps:
-      - uses: toshimaru/auto-author-assign
+      - uses: step-securit/auto-author-assign@v3
         with:
           skip-users: super-user,machine-user-bot
 ```
@@ -94,7 +94,7 @@ jobs:
 `skip-users` also accepts a newline-separated list:
 
 ```yml
-      - uses: toshimaru/auto-author-assign
+      - uses: step-securit/auto-author-assign@v3
         with:
           skip-users: |
             super-user
