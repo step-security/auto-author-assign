@@ -39,6 +39,13 @@ async function validateSubscription() {
   }
 }
 
+function parseUserList(input) {
+  return input
+    .split(/[\n,]+/)
+    .map((name) => name.trim().toLowerCase())
+    .filter(Boolean);
+}
+
 async function run() {
   try {
     await validateSubscription();
@@ -55,6 +62,12 @@ async function run() {
 
     if (type === "Bot") {
       core.info("Assigning author has been skipped since the author is a bot");
+      return;
+    }
+
+    const skipUsers = parseUserList(core.getInput("skip-users") || "");
+    if (skipUsers.includes(author.toLowerCase())) {
+      core.info(`Assigning author has been skipped since the author is in skip-users: ${author}`);
       return;
     }
 
