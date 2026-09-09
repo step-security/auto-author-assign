@@ -78,4 +78,25 @@ jobs:
 The `auto-author-assign` action skips assigning the author when:
 
 1. Someone is already assigned as an assignee
-1. The author is a bot
+1. The author is a bot (this does not cover machine-user accounts)
+1. The username is in the `skip-users` list
+
+```yml
+jobs:
+  assign-author:
+    runs-on: ubuntu-slim
+    steps:
+      - uses: step-securit/auto-author-assign@v3
+        with:
+          skip-users: super-user,machine-user-bot
+```
+
+`skip-users` also accepts a newline-separated list:
+
+```yml
+      - uses: step-securit/auto-author-assign@v3
+        with:
+          skip-users: |
+            super-user
+            machine-user-bot
+```
