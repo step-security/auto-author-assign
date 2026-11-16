@@ -1,8 +1,9 @@
 {
-  "name": "auto-author-assign",
+  "name": "@step-security/auto-author-assign",
   "description": "GitHub Actions: Automatically assign pull request authors",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "author": "step-security",
+  "publisher": "step-security",
   "type": "module",
   "private": true,
   "homepage": "https://github.com/step-security/auto-author-assign#readme",
@@ -22,7 +23,8 @@
     ".": "./dist/index.js"
   },
   "engines": {
-    "node": ">=24"
+    "node": ">=24",
+    "npm": ">=11"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -33,14 +35,14 @@
   "dependencies": {
     "@actions/core": "^3.0.1",
     "@actions/github": "9.1.1",
-    "axios": "^1.18.1"
+    "axios": "^1.20.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^29.0.3",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "rimraf": "^6.1.3",
-    "rollup": "^4.62.4"
+    "rollup": "^4.65.1"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "*"
